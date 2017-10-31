@@ -16,15 +16,29 @@ public class Pathmaker : MonoBehaviour {
 
 //	DECLARE CLASS MEMBER VARIABLES:
 	private int counter;//	Declare a private integer called counter that starts at 0; 		// counter var will track how many floor tiles I've instantiated
-	public Transform floorPrefab;//	Declare a public Transform called floorPrefab, assign the prefab in inspector;
+	GameObject floorPrefab;//	Declare a public Transform called floorPrefab, assign the prefab in inspector;
 	public Transform pathmakerSpherePrefab;//	Declare a public Transform called pathmakerSpherePrefab, assign the prefab in inspector; 		// you'll have to make a "pathmakerSphere" prefab later
+	public GameObject candyCornPrefab;
+	public GameObject witchHatPrefab;
+	public GameObject ghostPrefab;
 
 	void Start() {
 		counter = 0;
 	}
 	void Update () {
-		if (counter < 50 && tileManager.globalTileCount < 500) {//If counter is less than 50, then:
+		if (counter < 50 && tileManager.globalTileCount < 100) {//If counter is less than 50, then:
 			float randomNumber = Random.Range(0.0f, 1.0f);//Generate a random number from 0.0f to 1.0f;
+			int tileChoice = Random.Range(1,4);
+			if (tileChoice == 1){
+				floorPrefab = candyCornPrefab;
+			}
+			else if (tileChoice == 2){
+				floorPrefab = witchHatPrefab;
+				Debug.Log ("witch hat picked");
+			}
+			else {
+				floorPrefab = ghostPrefab;
+			}
 			if (randomNumber < 0.25f) {//(If random number is less than 0.25f
 				transform.Rotate(0f, 90f, 0f);
 			}//rotate myself 90 degrees
@@ -35,7 +49,7 @@ public class Pathmaker : MonoBehaviour {
 				Instantiate(pathmakerSpherePrefab, transform.position, transform.rotation);
 			}	
 			Instantiate(floorPrefab, transform.position, transform.rotation);//Instantiate a floorPrefab clone at current position;
-			transform.Translate(Vector3.forward, Space.Self); //Move forward ("forward" in local space, relative to the direction I'm facing) by 5 units;
+			transform.Translate(Vector3.forward * 5, Space.Self); //Move forward ("forward" in local space, relative to the direction I'm facing) by 5 units;
 			tileManager.globalTileCount++;//Increment counter;
 			counter++;
 		}//			... Else if number is 0.99f-1.0f, then instantiate a pathmakerSpherePrefab clone at my current position;

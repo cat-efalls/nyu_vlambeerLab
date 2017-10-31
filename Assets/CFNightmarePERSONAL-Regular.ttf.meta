@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: fbb66d19a8e1d8946a6d8ffefcbfe684
+timeCreated: 1509427665
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: CF Nightmare PERSONAL
+  fontNames:
+  - CF Nightmare PERSONAL
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

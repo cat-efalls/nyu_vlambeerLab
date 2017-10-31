@@ -93,9 +93,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5575b50532c45f4984a0392f98e35f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floorPrefab: {fileID: 4313634975516130, guid: 2bcc2a02f8acecb4eb2d5f7d07dcff3a,
+  pathmakerSpherePrefab: {fileID: 4315478891875010}
+  candyCornPrefab: {fileID: 1257729100576376, guid: 98109f0ad41328c459c0aabb59e116d5,
     type: 2}
-  pathmakerSpherePrefab: {fileID: 0}
+  witchHatPrefab: {fileID: 1347376078157396, guid: b745672a4f329bf43933abcebd0dec00,
+    type: 2}
+  ghostPrefab: {fileID: 1195347957713782, guid: dee1b12538b5b1744975466bfbca9d03,
+    type: 2}
 --- !u!135 &135317565345593288
 SphereCollider:
   m_ObjectHideFlags: 1
